@@ -3,262 +3,433 @@
     {
       "id": "test",
       "name": "Test Event",
-      "time": "22:10",
+      "type": "special",
+      "time": "23:50",
       "message": "🧪 TEST - If you see this, it works"
+    },
+    {
+      "id": "tokyo_open_advance",
+      "name": "Tokyo Open",
+      "type": "normal",
+      "time": "17:00",
+      "message": "⏰ Tokyo Open (in 1 hour)"
     },
     {
       "id": "tokyo_open",
       "name": "Tokyo Open",
+      "type": "normal",
       "time": "18:00",
-      "advance": 60,
-      "message": "🇯🇵 TOKYO OPEN\n\nAsian session starts\n\n📊 Liquidity: Low - Moderate"
+      "message": "🇯🇵 TOKYO OPEN\n\nAsian session starts"
+    },
+    {
+      "id": "london_open_advance",
+      "name": "London Open",
+      "type": "normal",
+      "time": "00:30",
+      "message": "⏰ London Open (in 30 min)"
     },
     {
       "id": "london_open",
       "name": "London Open",
+      "type": "normal",
       "time": "01:00",
-      "advance": 30,
-      "message": "🇬🇧 LONDON OPEN\n\nMajor liquidity increase\n\n📊 Liquidity: High"
+      "message": "🇬🇧 LONDON OPEN\n\nMajor liquidity increase"
+    },
+    {
+      "id": "asia_europe_overlap_advance",
+      "name": "Asia-Europe Overlap",
+      "type": "normal",
+      "time": "01:45",
+      "message": "⏰ Asia-Europe Overlap (in 15 min)"
     },
     {
       "id": "asia_europe_overlap",
       "name": "Asia-Europe Overlap",
+      "type": "normal",
       "time": "02:00",
-      "advance": 15,
-      "message": "🌏 ASIA-EUROPE OVERLAP\n\n01:00 - 03:00\nModerate movement\n\n📊 Liquidity: Medium-High"
+      "message": "🌏 ASIA-EUROPE OVERLAP\n\n01:00 - 03:00"
+    },
+    {
+      "id": "ny_open_advance",
+      "name": "New York Open",
+      "type": "normal",
+      "time": "07:15",
+      "message": "⏰ New York Open (in 15 min)"
     },
     {
       "id": "ny_open",
       "name": "New York Open",
+      "type": "normal",
       "time": "07:30",
-      "advance": 15,
-      "message": "🗽 NEW YORK OPEN\n\nHuge liquidity increase\n\n📊 Liquidity: Very High"
+      "message": "🗽 NEW YORK OPEN\n\nHuge liquidity increase"
     },
     {
-      "id": "london_ny_overlap_start",
+      "id": "overlap_start",
       "name": "London-NY Overlap",
+      "type": "normal",
       "time": "07:30",
-      "message": "⚡ LONDON-NY OVERLAP STARTS\n\n07:30 - 10:00\n🔥 MOST ACTIVE MOMENT OF THE DAY\n\n📊 Liquidity: MAXIMUM"
+      "message": "⚡ LONDON-NY OVERLAP STARTS\n\n07:30 - 10:00"
     },
     {
-      "id": "london_ny_overlap_mid",
+      "id": "overlap_peak",
       "name": "London-NY Overlap",
+      "type": "normal",
       "time": "08:45",
-      "message": "⚡ LONDON-NY OVERLAP\n\nPeak hours\n🔥 High volatility\n\n📊 Best trading moment"
+      "message": "⚡ Overlap peak\n\n🔥 Most active moment"
+    },
+    {
+      "id": "london_close_advance",
+      "name": "London Close",
+      "type": "normal",
+      "time": "09:30",
+      "message": "⏰ London Close (in 30 min)"
     },
     {
       "id": "london_close",
       "name": "London Close",
+      "type": "normal",
       "time": "10:00",
-      "advance": 30,
-      "message": "🏁 LONDON CLOSE\n\nVolatility usually drops\n\n📊 European session ends"
+      "message": "🏁 LONDON CLOSE\n\nEuropean session ends"
+    },
+    {
+      "id": "ny_close_advance",
+      "name": "New York Close",
+      "type": "normal",
+      "time": "13:00",
+      "message": "⏰ New York Close (in 1 hour)"
     },
     {
       "id": "ny_close",
       "name": "New York Close",
+      "type": "normal",
       "time": "14:00",
-      "advance": 60,
-      "message": "🏁 NEW YORK CLOSE\n\nMain session ends\n\n📊 Liquidity: Low"
+      "message": "🏁 NEW YORK CLOSE\n\nMain session ends"
     },
     {
       "id": "forex_rollover",
       "name": "Forex Rollover",
+      "type": "normal",
       "time": "15:00",
-      "message": "🔄 FOREX ROLLOVER\n\nTechnical reset\nSwaps and spreads update"
+      "message": "🔄 FOREX ROLLOVER\n\nSwaps and spreads update"
     },
     {
-      "id": "sunday_open",
-      "name": "Sunday Market Open",
-      "time": "15:00",
-      "advance": 60,
-      "message": "📈 SUNDAY 15:00\n\nForex market opens\n\nNew trading week begins"
-    },
-    {
-      "id": "monday_marker",
+      "id": "monday_market",
       "name": "Monday Market",
+      "type": "normal",
       "time": "08:00",
-      "message": "📅 MONDAY\n\nSlow market (week start)\n🐢 Reduced movements"
+      "message": "📅 MONDAY\n\nSlow market (week start)"
     },
     {
-      "id": "tuesday_marker",
+      "id": "tuesday_market",
       "name": "Tuesday Market",
+      "type": "normal",
       "time": "08:00",
-      "message": "📅 TUESDAY\n\nActive market\n📊 Good trading day"
+      "message": "📅 TUESDAY\n\nActive market"
     },
     {
-      "id": "wednesday_marker",
+      "id": "wednesday_market",
       "name": "Wednesday Market",
+      "type": "normal",
       "time": "08:00",
-      "message": "📅 WEDNESDAY\n\n🔥 VERY ACTIVE MARKET\n\nBest day of the week"
+      "message": "📅 WEDNESDAY\n\n🔥 VERY ACTIVE"
     },
     {
-      "id": "thursday_marker",
+      "id": "thursday_market",
       "name": "Thursday Market",
+      "type": "normal",
       "time": "08:00",
-      "message": "📅 THURSDAY\n\nActive market\n📊 High liquidity"
+      "message": "📅 THURSDAY\n\nActive market"
     },
     {
-      "id": "friday_marker",
+      "id": "friday_market",
       "name": "Friday Market",
+      "type": "normal",
       "time": "08:00",
-      "message": "📅 FRIDAY\n\nWeekly close volatility\n⚠️ Sharp movements"
+      "message": "📅 FRIDAY\n\nWeekly close volatility"
+    },
+    {
+      "id": "friday_close_advance",
+      "name": "Friday Close",
+      "type": "special",
+      "condition": "weekend",
+      "time": "14:00",
+      "message": "⏰ Markets close in 1 hour"
     },
     {
       "id": "friday_close",
       "name": "Friday Close",
+      "type": "special",
+      "condition": "weekend",
+      "time": "15:00",
+      "message": "🔒 WEEKLY MARKET CLOSE\n\nUntil Sunday 15:00"
+    },
+    {
+      "id": "saturday_closed",
+      "name": "Saturday",
+      "type": "special",
+      "condition": "weekend",
+      "time": "00:01",
+      "message": "🚫 All markets closed"
+    },
+    {
+      "id": "sunday_closed",
+      "name": "Sunday",
+      "type": "special",
+      "condition": "weekend",
+      "time": "00:01",
+      "message": "🚫 All markets closed"
+    },
+    {
+      "id": "sunday_open_advance",
+      "name": "Sunday Open",
+      "type": "special",
+      "condition": "weekend",
       "time": "14:00",
-      "advance": 60,
-      "message": "🏁 FRIDAY 14:00\n\nGlobal Forex close\n\n🌙 Until Sunday 15:00"
+      "message": "⏰ Markets open in 1 hour"
     },
     {
-      "id": "jan_mar",
+      "id": "sunday_open",
+      "name": "Sunday Open",
+      "type": "special",
+      "condition": "weekend",
+      "time": "15:00",
+      "message": "🔓 WEEKLY MARKET OPEN\n\nNew trading week begins"
+    },
+    {
+      "id": "q1",
       "name": "Q1 High Activity",
+      "type": "special",
+      "date": "2026-01-01",
       "time": "09:00",
-      "message": "📆 JANUARY - MARCH\n\n🔥 Very active market\nHigh trading season"
+      "message": "📆 Q1 starts - High Activity (Jan-Mar)"
     },
     {
-      "id": "apr_jun",
+      "id": "imbolc",
+      "name": "Imbolc",
+      "type": "special",
+      "date": "2026-02-02",
+      "time": "08:00",
+      "message": "🕯️ Imbolc (Candlemas)"
+    },
+    {
+      "id": "valentine",
+      "name": "Valentine's Day",
+      "type": "special",
+      "date": "2026-02-14",
+      "time": "08:00",
+      "message": "💘 Valentine's Day"
+    },
+    {
+      "id": "st_patrick",
+      "name": "St. Patrick's Day",
+      "type": "special",
+      "date": "2026-03-17",
+      "time": "08:00",
+      "message": "☘️ St. Patrick's Day"
+    },
+    {
+      "id": "spring_equinox",
+      "name": "Spring Equinox",
+      "type": "special",
+      "date": "2026-03-20",
+      "time": "08:00",
+      "message": "🌸 Spring Equinox (Ostara)"
+    },
+    {
+      "id": "q2",
       "name": "Q2 Normal Activity",
+      "type": "special",
+      "date": "2026-04-01",
       "time": "09:00",
-      "message": "📆 APRIL - JUNE\n\nNormal activity\nStable market"
+      "message": "📆 Q2 starts - Normal Activity (Apr-Jun)"
+    },
+    {
+      "id": "beltane",
+      "name": "Beltane",
+      "type": "special",
+      "date": "2026-05-01",
+      "time": "08:00",
+      "message": "🔥 Beltane"
+    },
+    {
+      "id": "summer_solstice",
+      "name": "Summer Solstice",
+      "type": "special",
+      "date": "2026-06-21",
+      "time": "08:00",
+      "message": "☀️ Summer Solstice (Litha)"
+    },
+    {
+      "id": "lammas",
+      "name": "Lammas",
+      "type": "special",
+      "date": "2026-08-01",
+      "time": "08:00",
+      "message": "🌾 Lammas / Lughnasadh"
     },
     {
       "id": "august_slow",
       "name": "August Slow Market",
+      "type": "special",
+      "date": "2026-08-01",
       "time": "09:00",
-      "message": "📆 AUGUST\n\n🐢 Slow market\nEurope vacations\nReduced liquidity"
+      "message": "📆 August - Slow Market"
     },
     {
-      "id": "sep_nov",
+      "id": "autumn_equinox",
+      "name": "Autumn Equinox",
+      "type": "special",
+      "date": "2026-09-23",
+      "time": "08:00",
+      "message": "🍂 Autumn Equinox (Mabon)"
+    },
+    {
+      "id": "q4",
       "name": "Q4 High Activity",
+      "type": "special",
+      "date": "2026-09-01",
       "time": "09:00",
-      "message": "📆 SEPTEMBER - NOVEMBER\n\n🔥 High activity\nStrong season"
+      "message": "📆 Q4 starts - High Activity (Sep-Nov)"
+    },
+    {
+      "id": "samhain",
+      "name": "Samhain",
+      "type": "special",
+      "date": "2026-10-30",
+      "time": "08:00",
+      "message": "💀 Samhain"
+    },
+    {
+      "id": "halloween",
+      "name": "Halloween",
+      "type": "special",
+      "date": "2026-10-31",
+      "time": "08:00",
+      "message": "🎃 Halloween"
+    },
+    {
+      "id": "winter_solstice",
+      "name": "Winter Solstice",
+      "type": "special",
+      "date": "2026-12-21",
+      "time": "08:00",
+      "message": "❄️ Winter Solstice (Yule)"
     },
     {
       "id": "december_low",
       "name": "December Low Liquidity",
+      "type": "special",
+      "date": "2026-12-01",
       "time": "09:00",
-      "message": "📆 DECEMBER\n\n💧 Very low liquidity\nYear-end, thin markets"
+      "message": "📆 December - Low Liquidity"
+    },
+    {
+      "id": "new_years_eve",
+      "name": "New Year's Eve",
+      "type": "special",
+      "date": "2026-12-31",
+      "time": "08:00",
+      "message": "🎆 New Year's Eve"
     },
     {
       "id": "new_years_day",
       "name": "New Year's Day",
+      "type": "holiday",
       "date": "2026-01-01",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🎉 NEW YEAR'S DAY\n\nJanuary 1, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🎉 NEW YEAR'S DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "mlk_day",
       "name": "Martin Luther King Jr. Day",
+      "type": "holiday",
       "date": "2026-01-19",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🕊️ MARTIN LUTHER KING JR. DAY\n\nJanuary 19, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🕊️ MARTIN LUTHER KING JR. DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "presidents_day",
       "name": "Presidents' Day",
+      "type": "holiday",
       "date": "2026-02-16",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🇺🇸 PRESIDENTS' DAY\n\nFebruary 16, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🇺🇸 PRESIDENTS' DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "good_friday",
       "name": "Good Friday",
+      "type": "holiday",
       "date": "2026-04-03",
       "time": "08:00",
-      "advance": 1440,
-      "message": "✝️ GOOD FRIDAY\n\nApril 3, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "✝️ GOOD FRIDAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "memorial_day",
       "name": "Memorial Day",
+      "type": "holiday",
       "date": "2026-05-25",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🎖️ MEMORIAL DAY\n\nMay 25, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🎖️ MEMORIAL DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "juneteenth",
       "name": "Juneteenth",
+      "type": "holiday",
       "date": "2026-06-19",
       "time": "08:00",
-      "advance": 1440,
-      "message": "✊🏿 JUNETEENTH\n\nJune 19, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "✊🏿 JUNETEENTH\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "independence_day",
       "name": "Independence Day",
+      "type": "holiday",
       "date": "2026-07-03",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🎆 INDEPENDENCE DAY (observed)\n\nJuly 3, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🎆 INDEPENDENCE DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "labor_day",
       "name": "Labor Day",
+      "type": "holiday",
       "date": "2026-09-07",
       "time": "08:00",
-      "advance": 1440,
-      "message": "👷 LABOR DAY\n\nSeptember 7, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "👷 LABOR DAY\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "thanksgiving",
       "name": "Thanksgiving",
+      "type": "holiday",
       "date": "2026-11-26",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🦃 THANKSGIVING\n\nNovember 26, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
-    },
-    {
-      "id": "christmas",
-      "name": "Christmas Day",
-      "date": "2026-12-25",
-      "time": "08:00",
-      "advance": 1440,
-      "message": "🎄 CHRISTMAS DAY\n\nDecember 25, 2026\n\n🟥 Wall Street: CLOSED\n🌏 Forex: Open (reduced liquidity)\n₿ Crypto: Open"
+      "message": "🦃 THANKSGIVING\n\n🟥 Wall Street: CLOSED"
     },
     {
       "id": "black_friday",
       "name": "Black Friday",
+      "type": "holiday",
+      "condition": "early_close",
       "date": "2026-11-27",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🛍️ BLACK FRIDAY\n\nNovember 27, 2026\n\n🟡 Wall Street: Early close (13:00)\n🌏 Forex: Open\n₿ Crypto: Open"
+      "close_time": "13:00",
+      "message": "🛍️ BLACK FRIDAY\n\n🟡 Early close 13:00"
     },
     {
       "id": "christmas_eve",
       "name": "Christmas Eve",
+      "type": "holiday",
+      "condition": "early_close",
       "date": "2026-12-24",
       "time": "08:00",
-      "advance": 1440,
-      "message": "🎄 CHRISTMAS EVE\n\nDecember 24, 2026\n\n🟡 Wall Street: Early close (13:00)\n🌏 Forex: Open\n₿ Crypto: Open"
-    }
-  ],
-  "holidays": [
-    "2026-01-01",
-    "2026-01-19",
-    "2026-02-16",
-    "2026-04-03",
-    "2026-05-25",
-    "2026-06-19",
-    "2026-07-03",
-    "2026-09-07",
-    "2026-11-26",
-    "2026-12-25"
-  ],
-  "early_closes": [
-    {
-      "date": "2026-11-27",
-      "name": "Black Friday",
-      "close_time": "13:00"
+      "close_time": "13:00",
+      "message": "🎄 CHRISTMAS EVE\n\n🟡 Early close 13:00"
     },
     {
-      "date": "2026-12-24",
-      "name": "Christmas Eve",
-      "close_time": "13:00"
+      "id": "christmas_day",
+      "name": "Christmas Day",
+      "type": "holiday",
+      "date": "2026-12-25",
+      "time": "08:00",
+      "message": "🎄 CHRISTMAS DAY\n\n🟥 Wall Street: CLOSED"
     }
   ]
 }
