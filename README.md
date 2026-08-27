@@ -1,146 +1,182 @@
-# ⏱️ WORLD TIMER - 2026 CALENDAR
+# ⏱️ WorldTimer – Energy Thermometer Bot
 
-A Telegram bot that posts scheduled market reminders and special events to your channel.
-
----
-
-## 📋 TABLE OF CONTENTS
-
-- [NORMAL DAY](#-normal-day)
-- [HOLIDAYS](#-holidays)
-- [SPECIAL DAYS](#-special-days)
-- [WEEKEND EVENTS](#-weekend-events)
-- [UNIVERSAL EVENTS](#-universal-events)
-- [CUSTOM EVENTS](#-custom-events)
-- [ASTERISK LEGEND](#-asterisk-legend)
-- [CONFIGURATION](#-configuration)
+A Telegram bot that posts scheduled market reminders, holiday alerts, and liquidity‑level updates to your channel.  
+It displays visual energy bars (1–10) for intraday liquidity, weekdays, and months.
 
 ---
 
-## 📅 NORMAL DAY
+## 📡 How to Use It?
 
-*Applies: Mon 00:00 - Fri 15:00 + Sun 15:00 - Sun 24:00 (GMT-7)*
+There are **two ways**:
 
-| Time | Event | Type |
-|------|-------|------|
-| 00:30 | ⏰ London Open | Advance (30 min) |
-| 01:00 | 🇬🇧 London Open | Session Open |
-| 01:45 | ⏰ Asia-Europe Overlap | Advance (15 min) |
-| 02:00 | 🌏 Asia-Europe Overlap | Overlap Event |
-| 07:15 | ⏰ New York Open | Advance (15 min) |
-| 07:30 | 🗽 New York Open / Overlap starts | Session Open |
-| 08:00 | 📅 [day of week] Market | Weekly Marker |
-| 08:45 | ⚡ Overlap peak | Peak Activity |
-| 09:30 | ⏰ London Close | Advance (30 min) |
-| 10:00 | 🏁 London Close | Session Close |
-| 13:00 | ⏰ New York Close | Advance (1 hour) |
-| 14:00 | 🏁 New York Close | Session Close |
-| 15:00 | 🔄 Forex Rollover | Daily Reset |
-| 17:00 | ⏰ Tokyo Open | Advance (1 hour) |
-| 18:00 | 🇯🇵 Tokyo Open | Session Open |
+### Option 1 (recommended for end users)
+**Follow the public Telegram channel:**  
+👉 [@WorldTimer_WW](https://t.me/WorldTimer_WW)  
+
+You'll automatically receive all scheduled messages (market opens/closes, holidays, liquidity peaks, etc.) without installing anything. **It's free and requires no configuration.**
+
+### Option 2 (for developers)
+Clone this repository if you want to:
+- Customise events (add your own reminders).
+- Modify the code or liquidity logic.
+- Host your own instance of the bot.
+
+Follow the installation instructions below.
 
 ---
 
-## 🟥 HOLIDAYS
+## ✨ Features
 
-*Only these messages. NORMAL DAY does NOT apply on these dates.*
-
-| Date | Time | Event |
-|------|------|-------|
-| 01 Jan | 08:00 | 🎉 New Year's Day (Wall Street CLOSED) |
-| 19 Jan | 08:00 | 🕊️ Martin Luther King Jr. Day (Wall Street CLOSED) |
-| 16 Feb | 08:00 | 🇺🇸 Presidents' Day (Wall Street CLOSED) |
-| 03 Apr | 08:00 | ✝️ Good Friday (Wall Street CLOSED) |
-| 25 May | 08:00 | 🎖️ Memorial Day (Wall Street CLOSED) |
-| 19 Jun | 08:00 | ✊🏿 Juneteenth (Wall Street CLOSED) |
-| 03 Jul | 08:00 | 🎆 Independence Day (observed) (Wall Street CLOSED) |
-| 07 Sep | 08:00 | 👷 Labor Day (Wall Street CLOSED) |
-| 26 Nov | 08:00 | 🦃 Thanksgiving (Wall Street CLOSED) |
-| 25 Dec | 08:00 | 🎄 Christmas Day (Wall Street CLOSED) |
-| 27 Nov | 08:00 | 🛍️ Black Friday * (early close 13:00) |
-| 24 Dec | 08:00 | 🎄 Christmas Eve * (early close 13:00) |
+- **Real‑time Liquidity Wave** – 30‑minute granularity based on Sydney, Tokyo, London, and New York sessions.
+- **Energy Bars** – Visual `█░` bars for current liquidity, day of week, and month.
+- **Holiday & Special Day Support** – Automatically disables normal day events on holidays.
+- **Anti‑Spam** – Prevents duplicate messages within a configurable window.
+- **Configurable Timezone** – Set via `events.json` or environment variable.
+- **Daily Summary** – Posts a comprehensive market overview at cycle start.
+- **Custom Events** – Add your own reminders in `events.json`.
 
 ---
 
-## 🌟 SPECIAL DAYS
+## 🛠️ Tech Stack
 
-*These messages are ADDED to NORMAL DAY (or HOLIDAYS if applicable).*
-
-| Date | Time | Event |
-|------|------|-------|
-| 01 Jan | 09:00 | 📆 Q1 starts - High Activity (Jan-Mar) |
-| 02 Feb | 08:00 | 🕯️ Imbolc (Candlemas) |
-| 14 Feb | 08:00 | 💘 Valentine's Day |
-| 17 Mar | 08:00 | ☘️ St. Patrick's Day |
-| 20 Mar | 08:00 | 🌸 Spring Equinox (Ostara) |
-| 01 Apr | 09:00 | 📆 Q2 starts - Normal Activity (Apr-Jun) |
-| 01 May | 08:00 | 🔥 Beltane |
-| 21 Jun | 08:00 | ☀️ Summer Solstice (Litha) |
-| 01 Aug | 08:00 | 🌾 Lammas / Lughnasadh |
-| 01 Aug | 09:00 | 📆 August - Slow Market (summer lull) |
-| 23 Sep | 08:00 | 🍂 Autumn Equinox (Mabon) |
-| 01 Sep | 09:00 | 📆 Q4 starts - High Activity (Sep-Nov) |
-| 30 Oct | 08:00 | 💀 Samhain |
-| 31 Oct | 08:00 | 🎃 Halloween |
-| 21 Dec | 08:00 | ❄️ Winter Solstice (Yule) |
-| 01 Dec | 09:00 | 📆 December - Low Liquidity |
-| 31 Dec | 08:00 | 🎆 New Year's Eve |
+- Python 3.10+
+- Telethon (Telegram client)
+- python-dotenv
+- ZoneInfo (timezone handling)
+- JSON for event storage
 
 ---
 
-## ⏰ WEEKEND EVENTS
+## 📦 Installation (only for self‑hosting)
 
-*Special messages for market open/close cycles.*
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/edbarron/worldtimer.git
+   cd worldtimer
+   ```
 
-| Day | Time | Event |
-|-----|------|-------|
-| Friday | 14:00 | ⏰ Markets close in 1 hour * |
-| Friday | 15:00 | 🔒 WEEKLY MARKET CLOSE * |
-| Saturday | 00:01 | 🚫 All markets closed * |
-| Sunday | 00:01 | 🚫 All markets closed * |
-| Sunday | 14:00 | ⏰ Markets open in 1 hour * |
-| Sunday | 15:00 | 🔓 WEEKLY MARKET OPEN * |
+2. **Create and activate a virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
 
----
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 🌍 UNIVERSAL EVENTS
+4. **Set up environment variables**  
+   Create a `.env` file in the root directory:
+   ```env
+   API_ID=your_telegram_api_id
+   API_HASH=your_telegram_api_hash
+   BOT_TOKEN=your_bot_token
+   CHANNEL_ID=@your_channel
+   CHECK_INTERVAL=60
+   TIMEZONE=America/Mazatlan
+   EVENTS_FILE=events.json
+   ```
 
-*Events that happen every day regardless of market conditions.*
+5. **Prepare the events file**  
+   Place your `events.json` in the root (you can use the example provided in the repo).
 
-| Time | Event |
-|------|-------|
-| 00:00 | 🌍 New UTC Day Begins |
-
----
-
-## 📝 CUSTOM EVENTS
-
-*Personal reminders you can add anytime.*
-
-| Date | Time | Event |
-|------|------|-------|
-| 12 Apr 2026 | 17:00 | 🦷 Dentist appointment |
-
-*(Add your own in the `custom` section of events.json)*
-
----
-
-## ⭐ ASTERISK LEGEND
-
-| Asterisk | Meaning |
-|----------|---------|
-| `*` | Day/time with special condition (weekend rule or early close) |
+6. **Run the bot**
+   ```bash
+   python worldtimer.py
+   ```
 
 ---
 
-## ⚙️ CONFIGURATION
+## ⚙️ Configuration
 
-### Environment Variables (.env)
+### Environment Variables
 
-```env
-API_ID=12345
-API_HASH=your_api_hash
-BOT_TOKEN=your_bot_token
-CHANNEL_ID=@your_channel
-CHECK_INTERVAL=60
-TIMEZONE=America/Mazatlan
+| Variable | Description |
+| :--- | :--- |
+| `API_ID` | Your Telegram API ID (from my.telegram.org) |
+| `API_HASH` | Your Telegram API hash |
+| `BOT_TOKEN` | Bot token from BotFather |
+| `CHANNEL_ID` | Channel username (e.g., `@mychannel`) or numeric ID |
+| `CHECK_INTERVAL` | Seconds between checks (default 60) |
+| `TIMEZONE` | IANA timezone (default `America/Mazatlan`) |
+| `EVENTS_FILE` | Path to events JSON (default `events.json`) |
+
+### events.json Structure
+
+The bot reads all events from this file. It includes:
+
+- `config` – timezone and anti_spam_minutes
+- `holidays` – dates with full market closure
+- `weekly` – day‑of‑week repeating events (e.g., Monday market markers)
+- `weekend` – special weekend messages
+- `universal` – daily events (e.g., UTC day start)
+- `sessions` – market session open/close events (with advance warnings)
+- `session_events` – overlap peaks, rollovers, etc.
+- `special` – one‑off dates (equinoxes, holidays, etc.)
+- `custom` – user‑defined personal reminders
+
+A full reference is available in `calendar.md`.
+
+---
+
+## 📊 How It Works
+
+### Liquidity Wave (WAVE_LVLS)
+
+The bot uses a **48‑slot table** (30‑minute intervals starting at 15:00 local time) calibrated to the actual session hours:
+
+- **Sydney** 15:00–24:00  
+- **Tokyo** 16:00–01:00  
+- **London** 00:00–09:00  
+- **New York** 05:00–14:00  
+
+The level (1–10) reflects how many sessions are open at that moment, with the **London+NY overlap (06:00–07:30 local)** as the 10/10 peak and the **14:00–15:00 dead zone** as the 1/10 floor.
+
+### Energy Bars
+
+- **Intraday** – derived from `WAVE_LVLS` and displayed as `███░░░░░░░` with a trend indicator (RISING/FALLING/STABLE).
+- **Weekly** – based on the day of week (Monday 7 → Friday 1, etc.)
+- **Monthly** – based on the month (e.g., October 10, March 10, December 1)
+
+### Anti‑Spam
+
+Each event has a unique ID. The bot will not send the same event again within the configured `anti_spam_minutes` (default 5).
+
+### Daily Summary
+
+At the start of each trading cycle (15:00 local time), the bot posts a summary containing:
+- Current season
+- Market status (crypto, forex, stocks)
+- Weekly and monthly energy bars
+- Today’s liquidity cycle timeline
+
+---
+
+## 📁 File Structure
+
+```
+worldtimer/
+├── worldtimer.py          # Main bot code
+├── events.json            # All event definitions
+├── .env                   # Environment variables (not tracked)
+├── requirements.txt       # Python dependencies
+├── README.md              # This file
+└── calendar.md            # Reference calendar (human‑readable)
+```
+
+---
+
+## 🧪 Testing
+
+Run the bot in a test channel first. Ensure your `events.json` is correctly formatted. Use the `CHECK_INTERVAL` to speed up testing (e.g., set to 10 seconds).
+
+---
+
+## 📄 License
+
+MIT – free to use, modify, and distribute.
+
+---
+
+**Maintainer:** [PxlCode Studio](https://pxlcode.xyz) · [GitHub](https://github.com/edbarron)
